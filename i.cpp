@@ -16,16 +16,19 @@ using namespace std;
 /*
 felt cute, might delete it later :3
 */
+lli isVowel(char ch){
+    ch = toupper(ch);
+    return ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U';
+}
 
-void printRec(lli n){
-    if(n == 0) return;
-    printRec(n-1);
-    cout << "I love Recursion" << endl;
-    return;
+lli getCnt(string str, lli n){
+    if(n == 1) return isVowel(str[n-1]);
+    return getCnt(str, n-1) + isVowel(str[n-1]);
 }
 void solutionForProblem() {
-    lli n; cin >> n;
-    printRec(n);
+    string str = "";
+    getline(cin, str);
+    cout << getCnt(str, str.length()) << endl;
 }
 
 ////////////////////////////////////////////--Main Function--/////////////////////////////////////////////////////////////

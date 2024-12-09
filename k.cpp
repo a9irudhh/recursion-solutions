@@ -16,16 +16,15 @@ using namespace std;
 /*
 felt cute, might delete it later :3
 */
-
-void printRec(lli n){
-    if(n == 0) return;
-    printRec(n-1);
-    cout << "I love Recursion" << endl;
-    return;
+lli getMax(lli n, vector<lli>v){
+    if(n == 0) return v[0];
+    return max(v[n-1], getMax(n-1, v));
 }
 void solutionForProblem() {
     lli n; cin >> n;
-    printRec(n);
+    vector<lli>v(n);
+    f(i, 0, n) cin >> v[i];
+    cout << getMax(n, v) << endl;
 }
 
 ////////////////////////////////////////////--Main Function--/////////////////////////////////////////////////////////////

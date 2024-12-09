@@ -16,16 +16,17 @@ using namespace std;
 /*
 felt cute, might delete it later :3
 */
-
-void printRec(lli n){
-    if(n == 0) return;
-    printRec(n-1);
-    cout << "I love Recursion" << endl;
+void printDigits(lli n){
+    if(n <= 0) return;
+    printDigits(n/2);
+    cout << n%2;
     return;
 }
 void solutionForProblem() {
     lli n; cin >> n;
-    printRec(n);
+    if(n == 0) cout << 0;
+    else printDigits(n);
+    cout << endl;
 }
 
 ////////////////////////////////////////////--Main Function--/////////////////////////////////////////////////////////////
@@ -33,7 +34,7 @@ void solutionForProblem() {
 int main() {
     NFS;
     lli testCases = 1;
-    // cin >> testCases;
+    cin >> testCases;
     while (testCases--) {
         solutionForProblem();
     }

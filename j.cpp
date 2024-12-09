@@ -16,16 +16,13 @@ using namespace std;
 /*
 felt cute, might delete it later :3
 */
-
-void printRec(lli n){
-    if(n == 0) return;
-    printRec(n-1);
-    cout << "I love Recursion" << endl;
-    return;
+lli factorial(lli n){
+    if(n == 0 || n == 1) return 1;
+    return n * factorial(n-1);
 }
 void solutionForProblem() {
     lli n; cin >> n;
-    printRec(n);
+    cout << factorial(n) << endl;
 }
 
 ////////////////////////////////////////////--Main Function--/////////////////////////////////////////////////////////////

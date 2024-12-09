@@ -16,16 +16,15 @@ using namespace std;
 /*
 felt cute, might delete it later :3
 */
-
-void printRec(lli n){
-    if(n == 0) return;
-    printRec(n-1);
-    cout << "I love Recursion" << endl;
-    return;
+lli calcComb(lli n, lli r){
+    if(r == 0) return 1;
+    return n * calcComb(n-1, r-1) / r; 
 }
 void solutionForProblem() {
-    lli n; cin >> n;
-    printRec(n);
+    lli n, r; cin >> n >> r;
+
+    // nCr = (n-1)C(r-1) + (n-1)C(r)
+    cout << calcComb(n, r) << endl;
 }
 
 ////////////////////////////////////////////--Main Function--/////////////////////////////////////////////////////////////

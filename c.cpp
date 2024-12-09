@@ -16,16 +16,19 @@ using namespace std;
 /*
 felt cute, might delete it later :3
 */
-
-void printRec(lli n){
-    if(n == 0) return;
-    printRec(n-1);
-    cout << "I love Recursion" << endl;
+void printRevN(lli n){
+    if(n == 1) {
+        cout << n; 
+        return;
+    }
+    else cout << n << ' ';
+    printRevN(n-1);
     return;
 }
 void solutionForProblem() {
-    lli n; cin >> n;
-    printRec(n);
+    static lli n; cin >> n;
+    printRevN(n);
+    cout << endl;
 }
 
 ////////////////////////////////////////////--Main Function--/////////////////////////////////////////////////////////////
